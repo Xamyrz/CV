@@ -1,0 +1,177 @@
+\documentclass[a4paper, 11pt]{article}
+
+% Use small margins
+\usepackage[left=1.3cm, right=1.3cm, top=2cm, bottom=2cm]{geometry}
+
+\usepackage[unicode,
+            pdfencoding=auto,
+            pdfinfo={
+              Title={Kamil Michalskii CV},
+              Author={Kamil Michalskii},
+              Subject={Kamil Michalski CV},
+              Keywords={},
+              Producer={xelatex},
+            },
+]{hyperref}
+
+% Tables
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\setlist[itemize]{nosep,leftmargin=0.175in,bottommargin=0.175in}
+
+% flush right column
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}X}
+\renewcommand{\arraystretch}{1.15}
+
+% Fonts
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[default]{sourcesanspro}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+
+% Footer
+\usepackage{fancyhdr}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% prevent mid-word line breaks
+\usepackage[none]{hyphenat}
+
+% Section title
+\usepackage{titlesec}
+\titleformat{\section}{}{}{0pt}{}[]
+\titlespacing*{\section}{0pt}{2ex}{0.1ex}
+\newcommand{\sectitle}[2]{\large{#1} \ \ \Large{\textbf{#2}}}
+
+% Links
+\usepackage[usenames,dvipsnames]{xcolor}
+\RequirePackage{color,graphicx}
+\usepackage{hyperref}
+\definecolor{linkcolor}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolor, linkcolor=linkcolor}
+
+\IfFileExists{confidential.tex}{\include{confidential}}{}
+
+\begin{document}
+	\pagestyle{fancy}
+
+	% Header
+	\begin{center}
+	\begin{multicols}{3}
+		\begin{tabularx}{\linewidth}{@{}l X@{}}
+			\faMapMarker & Dublin 1, Ireland \\
+			\IfFileExists{confidential.tex}{\faPhone & \href{tel:\phoneNumber}{\prettyPhoneNumber} \\}{}
+			\faEnvelope	 & \href{mailto:kamilko19@gmail.coml}{kamilko19@gmail.com} \\
+		\end{tabularx} \vfill \null
+
+		\columnbreak
+			{ \Huge{Kamil \textbf{Michalski}}}
+		\columnbreak
+
+		\begin{tabularx}{\linewidth}{R | r}
+				\href{https://github.com/xamyrz}{/xamyrz} & \faGithub \\
+				\href{https://www.linkedin.com/in/kamil-michalski-7069451ab/}{/kamil-michalski} & \faLinkedin \\
+		\end{tabularx} \vfill \null
+	\end{multicols}
+	\end{center}
+
+
+	\begin{section}{\sectitle{\ \faUser}{\ Bio}}
+		Currently an indie developer that passionate in problem solving. Currently studying Computer Science in Dublin. Huge interest computers and competitive programming. Fast learner and works well in group or alone. \\
+	\end{section}
+
+	\newcommand{\education}[5]{
+		\textsc{#1} & #3: \textbf{#4} & \small{#5} \\[-0.5ex]
+		\textsc{#2} & \multicolumn{2}{l}{}\\
+	}
+
+
+	\begin{section}{\sectitle{\faGraduationCap}{Education}}
+		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X  r}
+			\education{2018}{present}{Bachelors in}{Computer Science}{University College Dublin}
+		\end{tabularx}
+		\\ \\
+	\end{section}
+
+	\newcommand{\tech}[1]{\textbf{#1}}
+
+	\newcommand{\experience}[6]{
+		\textsc{#1} & \textbf{#3} & \ifx&#4& #5 \else \href{#4}{#5} \fi \\[-0.5ex]
+	    \textsc{#2} & \multicolumn{2}{p{0.9\textwidth}}{\footnotesize{#6}} \\
+	}
+
+	\begin{section}{\sectitle{\faStar}{Experience}}
+		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
+				\experience{06.2019}{10.2019}{PHP/JavaScript Web App}{https://allaroundsound.ie/}{All Around Sound}{
+				Developing an inventory management system web app in \tech{PHP, JavaScript} and \tech{MySQL} that allows the company to keep track of their equipment by creating an event on the web app and adding a list of equiptment needed for that event, the user of the app then scans QR code that are on the equipment and adds it to the database of the event. When event is finished and gear is back at the warehouse, the user then scans the equipment again to add it back to the list of available equipment.
+				\vspace{0.3ex}
+			}
+				\experience{03.2019}{05.2019}{Board game in C}{https://github.com/Xamyrz/Igel-Argern-Game}{Igel Argern}{
+				Developed a board game with college class mate in C. It's a simple board game for up to 6 playes. The game is played in terminal only. \href{https://github.com/Xamyrz/Igel-Argern-Game}{GitHub}.
+				
+				\vspace{0.3ex}
+			}
+				\experience{06.2018}{06.2018}{NodeJS Web App}{http://youtube-player-sync.herokuapp.coml}{YoutubePlayerSync}{
+				Developed a simple NodeJS app with the use of SocketIO and Youtube API that allows users to watch youtube videos at the same time. \href{https://github.com/Xamyrz/Youtube-Sync}{GitHub}.
+				\vspace{0.3ex}
+			}
+		\end{tabularx}
+		\\ \\
+	\end{section}
+
+	\newcommand{\competitionIE}[5]{
+		\textsc{#1} & \textbf{#2} place in ireland at #3 \ & \footnotesize{#4}\\[-0.5ex]
+		\ifx&#5& \else
+		\ & \multicolumn{2}{p{0.82\textwidth}}{\footnotesize{#5}} \\[0.5ex]
+		\fi
+	}
+	\newcommand{\competition}[5]{
+		\textsc{#1} & \textbf{#2} place at #3 \ & \footnotesize{#4}\\[-0.5ex]
+		\ifx&#5& \else
+		\ & \multicolumn{2}{p{0.82\textwidth}}{\footnotesize{#5}} \\[0.5ex]
+		\fi
+	}
+
+	\begin{section}{\sectitle{\faTrophy}{Competitions}}
+		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
+			\competition{11.2019}{88th}{\href{http://2019.nwerc.eu/scoreboard/}{NWERC 2019 in Eindhoven}}{Algorithms, C++, Python}{
+			}
+			\competitionIE{10.2019}{3rd}{\href{http://ukiepc.info/2019/scoreboard/}{UKIEPC 2019}}{Algorithms, C++}{}
+		\end{tabularx}
+		\\ \\
+	\end{section}
+
+	\begin{section}{\sectitle{\faCogs}{Skills}}
+		\begin{tabularx}{\linewidth}{@{}l  X}
+			\textsc{languages} & Polish (native), English (advanced)\\
+			\textsc{programming languages} & JavaScript), NodeJS, PHP, Java, C, C++, SQL(MySQL), Python \\
+			\textsc{tools} & Git, Unix, \LaTeX, Spreadsheets \\
+			\textsc{other} & Working well in group or alone, good communication skills
+		\end{tabularx}
+		\\ \\
+	\end{section}
+
+	\newcommand{\hobbies}[2]{
+		\textsc{#1} & \multicolumn{2}{p{0.9\textwidth}}{\footnotesize{#2}} \\
+	}
+
+	\begin{section}{\sectitle{\faMotorcycle}{Hobbies}}
+		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
+			\hobbies{}{
+			\normalsize 
+			Guitar playing \hspace{6ex}
+			Motorcycles \hspace{6ex}
+			Board games \hspace{6ex}
+			Reverse engineering \hspace{6ex}
+			Music \hspace{6ex}
+			Festivals \hspace{6ex}
+			Traveling \hspace{6ex}
+}
+		\end{tabularx}
+	\end{section}
+
+\end{document}
