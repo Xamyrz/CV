@@ -56,6 +56,9 @@
 
 \IfFileExists{confidential.tex}{\include{confidential}}{}
 
+% Nth
+\usepackage[super]{nth}
+
 \begin{document}
 	\pagestyle{fancy}
 
@@ -65,7 +68,7 @@
 		\begin{tabularx}{\linewidth}{@{}l X@{}}
 			\faMapMarker & Dublin 1, Ireland \\
 			\IfFileExists{confidential.tex}{\faPhone & \href{tel:\phoneNumber}{\prettyPhoneNumber} \\}{}
-			\faEnvelope	 & \href{mailto:kamilko19@gmail.coml}{kamilko19@gmail.com} \\
+			\faEnvelope	 & \href{mailto:kamil.michalski@ucdconnect.ie}{kamil.michalski@ucdconnect.ie} \\
 		\end{tabularx} \vfill \null
 
 		\columnbreak
@@ -81,18 +84,20 @@
 
 
 	\begin{section}{\sectitle{\ \faUser}{\ Bio}}
-		Currently an indie developer that passionate in problem solving. Currently studying Computer Science in Dublin. Huge interest computers and competitive programming. Fast learner and works well in group or alone. \\
+		I am a current \nth{2} Year student of Computer Science in University College Dublin. Huge interest in computer hardware and computer programming with languages ranging from Scheme to Python. Fluent in English and Polish. \\
 	\end{section}
 
-	\newcommand{\education}[5]{
+	\newcommand{\education}[6]{
 		\textsc{#1} & #3: \textbf{#4} & \small{#5} \\[-0.5ex]
-		\textsc{#2} & \multicolumn{2}{l}{}\\
+		\textsc{#2} & \multicolumn{2}{l}{\footnotesize #6}\\
 	}
+
 
 
 	\begin{section}{\sectitle{\faGraduationCap}{Education}}
 		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X  r}
-			\education{2018}{present}{Bachelors in}{Computer Science}{University College Dublin}
+			\education{2018}{present}{Bachelors in}{Computer Science}{University College Dublin}{Key modules: Algorithmic Problem Solving, C Programming, Java Programming, Software Engineering, Digital Systems}
+			\education{2017}{2018}{QQI Level 5}{Computer Systems and Networks}{Dunboyne College}{All modules passed with a Distinction.\hspace{50ex}\textbf{Certificate Grade:} Distinction}
 		\end{tabularx}
 		\\ \\
 	\end{section}
@@ -138,9 +143,9 @@
 
 	\begin{section}{\sectitle{\faTrophy}{Competitions}}
 		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
-			\competition{11.2019}{88th}{\href{http://2019.nwerc.eu/scoreboard/}{NWERC 2019 in Eindhoven}}{Algorithms, C++, Python}{
+			\competition{11.2019}{\nth{88}}{\href{http://2019.nwerc.eu/scoreboard/}{NWERC 2019 in Eindhoven}}{Algorithms, C++, Python}{
 			}
-			\competitionIE{10.2019}{3rd}{\href{http://ukiepc.info/2019/scoreboard/}{UKIEPC 2019}}{Algorithms, C++}{}
+			\competitionIE{10.2019}{\nth{3}}{\href{http://ukiepc.info/2019/scoreboard/}{UKIEPC 2019}}{Algorithms, C++}{}
 		\end{tabularx}
 		\\ \\
 	\end{section}
@@ -170,7 +175,7 @@
 			Music \hspace{6ex}
 			Festivals \hspace{6ex}
 			Traveling \hspace{6ex}
-}
+			}
 		\end{tabularx}
 	\end{section}
 
