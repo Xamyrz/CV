@@ -18,6 +18,7 @@
  </head>
  
  <body>
- 	<iframe src="main.pdf" width="600" height="780" style="border: none;"></iframe>
+     <embed src="main.pdf" type="application/pdf" width="100%" height="600px" />
+<!-- 	<iframe src="main.pdf" width="600" height="780" style="border: none;"></iframe>-->
  </body>
 </html>
