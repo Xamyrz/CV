@@ -1,7 +1,7 @@
 \documentclass[a4paper, 11pt]{article}
 
 % Use small margins
-\usepackage[left=1.3cm, right=1.3cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[left=1.3cm, right=1.3cm, top=0.2cm, bottom=0.2cm]{geometry}
 
 \usepackage[unicode,
             pdfencoding=auto,
@@ -20,7 +20,7 @@
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{enumitem}
-\setlist[itemize]{nosep,leftmargin=0.175in,bottommargin=0.175in}
+\setlist[itemize]{nosep,leftmargin=0.175in,bottommargin=0.1in}
 
 % flush right column
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}X}
@@ -44,7 +44,7 @@
 % Section title
 \usepackage{titlesec}
 \titleformat{\section}{}{}{0pt}{}[]
-\titlespacing*{\section}{0pt}{2ex}{0.1ex}
+\titlespacing*{\section}{0pt}{0.2ex}{0.1ex}
 \newcommand{\sectitle}[2]{\large{#1} \ \ \Large{\textbf{#2}}}
 
 % Links
@@ -111,13 +111,24 @@
 
 	\begin{section}{\sectitle{\faStar}{Experience}}
 		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
+				\experience{10.2020}{12.2020}{PacChasers game in Java}{https://github.com/Xamyrz/Pac-Chasers}{PacChases}{
+				Fully Developed a 2D game with a working game server for online multiplayer using \tech{Socket.IO}, The game is a 2 player game where one player plays the \tech{Pacman} and the other the \tech{Ghost}, the Goal for the Pacman is to either kill the ghost by eating a power ball, or collect all the food on the map. The Goal for the Ghost is to catch Pacman before it eats all the food, Ghost can also eat the power balls to gain temporary speed boost.
+				\vspace{0.3ex}
+			}
+				\experience{09.2020}{10.2020}{TaskBot for Discord in Python}{https://github.com/Xamyrz/task-bot-discord}{TaskBot}{
+				Developed a Discord bot which allows the users to create tasks with due dates and assign them to specific Roles/users, the Bot sends a DM with the task to whoever it's assigned to, and the user can react on \tech{check} if they done the task or an \tech{X} if they haven't. The bot also sends a DM to the Users a week before the deadline as a reminded, and a day before the deadline. All Tasks are stored in a MongoDB.
+				\vspace{0.3ex}
+			}
+				\experience{08.2020}{10.2020}{GirlScript Gaming Booster Mentor}{}{}{
+				Mentoring people around the world to code 2 basic games in \tech{Java (processing)} and \tech{JavaScript}, the games that I thought my mentees were Flappy Bird \tech{processing} and Snake \tech{(JS)}.
+				\vspace{0.3ex}
+			}
 				\experience{06.2019}{10.2019}{PHP/JavaScript Web App}{https://allaroundsound.ie/}{All Around Sound}{
 				Developing an inventory management system web app in \tech{PHP, JavaScript} and \tech{MySQL} that allows the company to keep track of their equipment by creating an event on the web app and adding a list of equiptment needed for that event, the user of the app then scans QR code that are on the equipment and adds it to the database of the event. When event is finished and gear is back at the warehouse, the user then scans the equipment again to add it back to the list of available equipment.
 				\vspace{0.3ex}
 			}
 				\experience{03.2019}{05.2019}{Board game in C}{https://github.com/Xamyrz/Igel-Argern-Game}{Igel Argern}{
 				Developed a board game with college class mate in C. It's a simple board game for up to 6 playes. The game is played in terminal only. \href{https://github.com/Xamyrz/Igel-Argern-Game}{GitHub}.
-				
 				\vspace{0.3ex}
 			}
 				\experience{06.2018}{06.2018}{NodeJS Web App}{http://youtube-player-sync.herokuapp.coml}{YoutubePlayerSync}{
