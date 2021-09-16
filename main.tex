@@ -1,7 +1,7 @@
 \documentclass[a4paper, 11pt]{article}
 
 % Use small margins
-\usepackage[left=1.3cm, right=1.3cm, top=0.2cm, bottom=0.2cm]{geometry}
+\usepackage[left=1.3cm, right=1.3cm, top=0.12cm, bottom=0.15cm]{geometry}
 
 \usepackage[unicode,
             pdfencoding=auto,
@@ -44,7 +44,7 @@
 % Section title
 \usepackage{titlesec}
 \titleformat{\section}{}{}{0pt}{}[]
-\titlespacing*{\section}{0pt}{0.2ex}{0.1ex}
+\titlespacing*{\section}{0pt}{0ex}{0ex}
 \newcommand{\sectitle}[2]{\large{#1} \ \ \Large{\textbf{#2}}}
 
 % Links
@@ -84,8 +84,9 @@
 
 
 	\begin{section}{\sectitle{\ \faUser}{\ Bio}}
-		I am a current \nth{2} Year student of Computer Science in University College Dublin. Huge interest in computer hardware and computer programming with languages ranging from Scheme to Python. Fluent in English and Polish. \\
+		I am a current \nth{3} Year student of Computer Science in University College Dublin. Huge interest in computer hardware and programming with languages ranging from Scheme to Python. Fluent in English and Polish. \\
 	\end{section}
+	\vspace{-3.5mm}
 
 	\newcommand{\education}[6]{
 		\textsc{#1} & #3: \textbf{#4} & \small{#5} \\[-0.5ex]
@@ -101,6 +102,8 @@
 		\end{tabularx}
 		\\ \\
 	\end{section}
+	\vspace{-3.5mm}
+
 
 	\newcommand{\tech}[1]{\textbf{#1}}
 
@@ -111,37 +114,39 @@
 
 	\begin{section}{\sectitle{\faStar}{Experience}}
 		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
-				\experience{10.2020}{12.2020}{PacChasers game in Java}{https://github.com/Xamyrz/Pac-Chasers}{PacChases}{
+				\experience{05.2021}{Present}{Part-time Internship at OpenLitterMap}{https://openlittermap.com/}{OpenLitterMap}{
+				Translated the whole website to Polish, Fixed a lot of minor bugs, created \tech{Artisan} scripts to migrate data from \tech{SQL} to \tech{Redis} and scripts to populate the database with dummy data for development purposes. OpenLitterMap is developed with \tech{Laravel} and \tech{ReactNative}.
+				\vspace{0.2ex}
+			}
+				\experience{05.2021}{08.2021}{Part-time Internship at Measuresoft}{http://measuresoft.com/}{Measuresoft}{
+				Created software installers with the use of \tech{WIX} that the end consumer can use to install Measuresoft's software, Implemented secure \tech{TLS} connection between client and the server for the existing software using \tech{OpenSSL} in \tech{C}. Done research on how a \tech{C shared library} can be executed through a web interface. Updated their projects to the newest version of Visual Studio after noticing that it wasn't possible to use newest version of \tech{openSSL} on them.
+				\vspace{0.2ex}
+			}
+				\experience{01.2021}{02.2021}{PacChasers game in Java}{https://github.com/Xamyrz/Pac-Chasers}{PacChases}{
 				Fully Developed a 2D game with a working game server for online multiplayer using \tech{Socket.IO}, The game is a 2 player game where one player plays the \tech{Pacman} and the other the \tech{Ghost}, the Goal for the Pacman is to either kill the ghost by eating a power ball, or collect all the food on the map. The Goal for the Ghost is to catch Pacman before it eats all the food, Ghost can also eat the power balls to gain temporary speed boost.
-				\vspace{0.3ex}
+				\vspace{0.2ex}
 			}
 				\experience{09.2020}{10.2020}{TaskBot for Discord in Python}{https://github.com/Xamyrz/task-bot-discord}{TaskBot}{
 				Developed a Discord bot which allows the users to create tasks with due dates and assign them to specific Roles/users, the Bot sends a DM with the task to whoever it's assigned to, and the user can react on \tech{check} if they done the task or an \tech{X} if they haven't. The bot also sends a DM to the Users a week before the deadline as a reminded, and a day before the deadline. All Tasks are stored in a MongoDB.
-				\vspace{0.3ex}
+				\vspace{0.2ex}
 			}
 				\experience{08.2020}{10.2020}{GirlScript Gaming Booster Mentor}{}{}{
 				Mentoring people around the world to code 2 basic games in \tech{Java (processing)} and \tech{JavaScript}, the games that I thought my mentees were Flappy Bird \tech{processing} and Snake \tech{(JS)}.
-				\vspace{0.3ex}
+				\vspace{0.2ex}
 			}
 				\experience{06.2019}{10.2019}{PHP/JavaScript Web App}{https://allaroundsound.ie/}{All Around Sound}{
 				Developing an inventory management system web app in \tech{PHP, JavaScript} and \tech{MySQL} that allows the company to keep track of their equipment by creating an event on the web app and adding a list of equiptment needed for that event, the user of the app then scans QR code that are on the equipment and adds it to the database of the event. When event is finished and gear is back at the warehouse, the user then scans the equipment again to add it back to the list of available equipment.
-				\vspace{0.3ex}
+				\vspace{0.2ex}
 			}
 				\experience{03.2019}{05.2019}{Board game in C}{https://github.com/Xamyrz/Igel-Argern-Game}{Igel Argern}{
 				Developed a board game with college class mate in C. It's a simple board game for up to 6 playes. The game is played in terminal only. \href{https://github.com/Xamyrz/Igel-Argern-Game}{GitHub}.
-				\vspace{0.3ex}
-			}
-				\experience{06.2018}{06.2018}{NodeJS Web App}{http://youtube-player-sync.herokuapp.coml}{YoutubePlayerSync}{
-				Developed a simple NodeJS app with the use of SocketIO and Youtube API that allows users to watch youtube videos at the same time. \href{https://github.com/Xamyrz/Youtube-Sync}{GitHub}.
-				\vspace{0.3ex}
-			}
-				\experience{02.2013}{04.2014}{Game server}{https://xamjump.herokuapp.com/l}{XamJump Minecraft server}{
-				At the age of 16, I've built my first server with over 200 players, at that time I organized a group of programmers and designers. My job was managing the Unix server and fixing anything that went wrong in-game. I was also taking care of the finances of the server. The project was so good that a year later I got an offer to sell it to a different company.
-				\vspace{0.3ex}
+				\vspace{0.2ex}
 			}
 		\end{tabularx}
 		\\ \\
 	\end{section}
+	\vspace{-3.5mm}
+
 
 	\newcommand{\competitionIE}[5]{
 		\textsc{#1} & \textbf{#2} place in ireland at #3 \ & \footnotesize{#4}\\[-0.5ex]
@@ -164,6 +169,8 @@
 		\end{tabularx}
 		\\ \\
 	\end{section}
+	\vspace{-3.5mm}
+
 
 	\begin{section}{\sectitle{\faCogs}{Skills}}
 		\begin{tabularx}{\linewidth}{@{}l  X}
@@ -174,11 +181,14 @@
 		\end{tabularx}
 		\\ \\
 	\end{section}
+	\vspace{-3.5mm}
 
 	\newcommand{\hobbies}[2]{
 		\textsc{#1} & \multicolumn{2}{p{0.9\textwidth}}{\footnotesize{#2}} \\
 	}
 
+	\let\cleardoublepage\clearpage
+	
 	\begin{section}{\sectitle{\faMotorcycle}{Hobbies}}
 		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
 			\hobbies{}{
@@ -193,5 +203,6 @@
 			}
 		\end{tabularx}
 	\end{section}
+	\vspace{-3.5mm}
 
 \end{document}
