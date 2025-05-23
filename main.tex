@@ -6,8 +6,8 @@
 \usepackage[unicode,
             pdfencoding=auto,
             pdfinfo={
-              Title={Kamil Michalskii CV},
-              Author={Kamil Michalskii},
+              Title={Kamil Michalski CV},
+              Author={Kamil Michalski},
               Subject={Kamil Michalski CV},
               Keywords={},
               Producer={xelatex},
@@ -98,7 +98,7 @@
 			\textsc{languages} & Polish (native), English (fluent)\\
 			\textsc{programming languages} & Apex, JavaScript, NodeJS, PHP, Java, C, C++, SQL(MySQL), Python, Scheme, Scala3, Go \\
 			\textsc{tools} & Git, Unix, Docker, Kubernetes, MongoDB, Hashicorp Vault, REST API \\
-			\textsc{other} & Working well in group or alone, good communication skills, Leadership skills
+			\textsc{other} & Microsoldering, microcontrollers, reverse engineering
 		\end{tabularx}
 		\\ \\
 	\end{section}
@@ -123,12 +123,12 @@
 
 	\begin{section}{\sectitle{\faStar}{Experience}}
 		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
-				\experience{07.2023}{Present}{Salesforce (IAM Security Software Engineer)}{https://www.salesforce.com}{Salesforce}{
-				Designed, developed, and enhanced various automations in the Salesforce internal solution for Identity Management developed on the Salesforce Platfom using \tech{Apex, JavaScript, LWC, Aura} and \tech{Rest API}, which decreased manual operations tasks for our team, thus enhancing our 		productivity.
+				\experience{07.2023}{04.2025}{Salesforce (IAM Security Software Engineer)}{https://www.salesforce.com}{Salesforce}{
+				Designed, developed, and enhanced various automations in the Salesforce internal solution for Identity Management using \tech{Apex, JavaScript, LWC, Aura} and \tech{Rest API}, which decreased manual operations tasks for our team, thus enhancing our productivity.
 				\vspace{0.2ex}
 			}
 				\experience{03.2022}{09.2022}{Internship at Salesforce (Security Software Engineer)}{https://www.salesforce.com}{Salesforce}{
-				Designed, Developed, and deployed automation of API secret rotation in \tech{Go} for various service providers to increase the security, decrease manual work and eliminate human error. Led the team behind this project and done code reviews to eliminate future flaws and bad design practices.
+				Designed, Developed, and deployed automation of API secret rotation in \tech{Go} for various service providers to increase the security, decrease manual work and eliminate human error. Led the team behind this project and provided code reviews to eliminate future flaws and bad design practices.
 				\vspace{0.2ex}
 			}
 				\experience{05.2021}{01.2022}{Part-time Internship at OpenLitterMap (Software Engineer)}{https://openlittermap.com/}{OpenLitterMap}{
@@ -151,13 +151,17 @@
 
 	\begin{section}{\sectitle{\faClipboard}{Projects}}
 		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
-				\experience{03.2023}{07.2024}{DIY Security Camera using ESP32CAM}{https://github.com/Xamyrz/SecurityBot}{SecurityBot}{
+				\experience{03.2023}{}{DIY Security Camera using ESP32CAM}{https://github.com/Xamyrz/SecurityBot}{SecurityBot}{
 				Developed a security camera system using cheap electronic components such as ESP32CAM and PIR sensor to privately send notifications and recordings to Discord or Signal when motion is detected. The project is written in \tech{Python} and a modified version of ESP32CAM streaming web server to send out sockets to the Discord/Signal Bot when the PIR sensor detects motion, thus triggering the bot to send a private message of motion being detected and capturing 35 seconds of the cameras live feed and sending it. The bot contains three commands, \tech{!start, !stop,} and \tech{!last} to send the last 5 seconds captured.
 				\vspace{0.2ex}
 			}
-				\experience{01.2021}{02.2021}{PacChasers game in Java}{https://github.com/Xamyrz/Pac-Chasers}{PacChases}{
-				Fully Developed a 2D game with a working game server for online multiplayer using \tech{Socket.IO}. The game is a 2 player game where one player plays the \tech{Pacman} and the other the \tech{Ghost}, the Goal for the Pacman is to either kill the ghost by eating a power ball, or collect all the food on the map. The Goal for the Ghost is to catch Pacman before it eats all the food, Ghost can also eat the power balls to gain temporary speed boost.
+				\experience{01.2017}{}{Unix on ARM}{}{}{
+				Journey began with Raspberry Pi 3 used as a simple home theater that later led to hosting local servers and thinkering of what else can be achieved with it for home use. Currently use \tech{RPI3} as PiHole and \tech{RPi4} for local password manager hosting with daily backup \tech{CRON} jobs. When I learned Switch console has a capability of running Unix, I've took the console apart and began microsoldering weeks after only having it, it meant unlocking full potential of the device and allow for endless possibilities.
 				\vspace{0.2ex}
+			}
+			
+				\experience{06.2013}{}{ParkourLive (Minecraft)}{https://github.com/Xamyrz/Parkour}{Parkour}{
+				Project which began in 2013 under the name XamJump was a Minecraft server dedicated to parkour that gathering roughly 300 concurrent players at peak times, at the time I was maintaing the Unix side of the project. The plugin was maintained by two developers until the project was no longer profitable in early 2014. In 2022 project was revived under the name ParkourLive where my initial code contribution began by updating the legacy code and adding new features.
 			}
 		\end{tabularx}
 		\\ \\
@@ -198,22 +202,6 @@
 
 	\let\cleardoublepage\clearpage
 	
-	\begin{section}{\sectitle{\faMotorcycle}{Hobbies}}
-		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
-			\hobbies{}{
-			\normalsize 
-			Guitar playing \hspace{6ex}
-			Motorcycles \hspace{6ex}
-			Board games \hspace{6ex}
-			Reverse engineering \hspace{6ex}
-			Music \hspace{6ex}
-			Festivals \hspace{6ex}
-			Traveling \hspace{6ex}
-			Bouldering \hspace{6ex}
-			MTB\hspace{6ex}
-			}
-		\end{tabularx}
-	\end{section}
 	\vspace{-3.5mm}
 
 \end{document}
