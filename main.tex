@@ -14,13 +14,13 @@
             },
 ]{hyperref}
 
+
 % Tables
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{enumitem}
-\setlist[itemize]{nosep,leftmargin=0.175in,bottommargin=0.1in}
 
 % flush right column
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}X}
@@ -59,6 +59,9 @@
 % Nth
 \usepackage[super]{nth}
 
+% Setlists
+\setlist[itemize]{nosep, leftmargin=9pt}
+
 \begin{document}
 	\pagestyle{fancy}
 
@@ -88,15 +91,29 @@
 	\end{section}
 	\vspace{-3.5mm}
 
-	\newcommand{\education}[6]{
-		\textsc{#1} & #3: \textbf{#4} & \small{#5} \\[-0.5ex]
-		\textsc{#2} & \multicolumn{2}{l}{\footnotesize #6}\\
-	}
+%	\newcommand{\education}[6]{
+%		\textsc{#1} & #3: \textbf{#4} & \small{#5} \\[-0.5ex]
+%		\textsc{#2} & \multicolumn{2}{l}{\footnotesize #6}\\
+%	}
+
+%	\newcommand{\education}[8]{
+%		\textsc{#1} & #3: \textbf{#4} & \ifx&#5& #6 \else \href{#5}{#6} \fi \\[-0.5ex]
+%	    \textsc{#2} & \multicolumn{2}{p{0.9\textwidth}}{\footnotesize{#7}} \\
+%	    \textbf{#8} \\
+%	}
+	
+\newcommand{\education}[9]{
+    \textsc{#1} & \textbf{#3:} #4 & \ifx&#5& #6 \else \href{#5}{#6} \fi \\[-1ex]
+    \textsc{#2} & \footnotesize{\textbf{#7} #8} \\[-0.8ex]
+    & \multicolumn{2}{p{0.9\textwidth}}{\footnotesize{#9}} \\[0ex]
+}
+
+
 
 		\begin{section}{\sectitle{\faCogs}{Skills}}
 		\begin{tabularx}{\linewidth}{@{}l  X}
 			\textsc{languages} & Polish (native), English (fluent)\\
-			\textsc{programming languages} & Apex, JavaScript, NodeJS, PHP, Java, C, C++, SQL(MySQL), Python, Scheme, Scala3, Go \\
+			\textsc{programming languages} & Apex, Go JavaScript, NodeJS, PHP, Java, C, C++, SQL(MySQL), Python, Scheme, Scala3 \\
 			\textsc{tools} & Git, Unix, Docker, Kubernetes, MongoDB, Hashicorp Vault, REST API \\
 			\textsc{other} & Microsoldering, microcontrollers, reverse engineering
 		\end{tabularx}
@@ -106,8 +123,8 @@
 
 	\begin{section}{\sectitle{\faGraduationCap}{Education}}
 		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X  r}
-			\education{2018}{2023}{Bachelors in}{Computer Science}{University College Dublin}{Key modules: Algorithmic Problem Solving, C Programming, Java Programming, Software Engineering, Distributed Systems}
-			\education{2017}{2018}{QQI Level 5}{Computer Systems and Networks}{Dunboyne College}{All modules passed with a Distinction.\hspace{50ex}\textbf{Certificate Grade:} Distinction}
+			\education{2018}{2023}{Bachelors in}{Computer Science}{https://www.ucd.ie/}{University College Dublin}{Degree classification:}{Second Class Honours, Grade 1 \textbf{[2:1]}}{\textbf{Key modules:} Algorithmic Problem Solving, C Programming, Java Programming, Software Engineering, Distributed Systems}
+			\education{2017}{2018}{QQI Level 5}{Computer Systems and Networks}{https://dunboynecollege.ie/}{Dunboyne College}{Degree classification:}{Distinction}{All modules passed with a Distinction.}
 		\end{tabularx}
 		\\ \\
 	\end{section}
@@ -124,25 +141,45 @@
 	\begin{section}{\sectitle{\faStar}{Experience}}
 		\begin{tabularx}{\linewidth}{@{}p{1.4cm} | X r}
 				\experience{07.2023}{04.2025}{Salesforce (IAM Security Software Engineer)}{https://www.salesforce.com}{Salesforce}{
-				Designed, developed, and enhanced various automations in the Salesforce internal solution for Identity Management using \tech{Apex, JavaScript, LWC, Aura} and \tech{Rest API}, which decreased manual operations tasks for our team, thus enhancing our productivity.
-				\vspace{0.2ex}
+		
+				(Apex, JavaScript, LWC, Aura, Rest API)
+				
+				\begin{itemize}				  	
+				  	\item Streamlined manual processes by 30\% through enhanced discrepancy detection between the IGA platform and target systems, eliminating false positives and automating the resolution of discrepancy cases.
+  					\item Designed and developed front-end and back-end solutions within the IGA platform for internal customers.
+  					\item Developed unit tests to identify unforeseen scenarios, eliminate redundant code, and refactor unreachable and overengineered logic, leading to a 25\% increase in overall code coverage.
+  					\item Assisted internal customer with designing SCIM 2.0 API implementation to allow for compatibility with the IGA platform.
+  					\item Carried out on-call duties that involved solving customer querries and deep diving into issues arrising and resolving them in a timely manner.
+  				\end{itemize}
 			}
 				\experience{03.2022}{09.2022}{Internship at Salesforce (Security Software Engineer)}{https://www.salesforce.com}{Salesforce}{
-				Designed, Developed, and deployed automation of API secret rotation in \tech{Go} for various service providers to increase the security, decrease manual work and eliminate human error. Led the team behind this project and provided code reviews to eliminate future flaws and bad design practices.
-				\vspace{0.2ex}
+				\vspace{-3.0mm}				
+				\begin{itemize}				  	
+				  	\item Designed, Developed, and deployed automation of API secret rotation in Go for various service providers to increase the security, decrease manual work and eliminate human error
+  					\item Led the team behind this project and provided code reviews to eliminate future flaws and bad design practices
+  				\end{itemize}
 			}
 				\experience{05.2021}{01.2022}{Part-time Internship at OpenLitterMap (Software Engineer)}{https://openlittermap.com/}{OpenLitterMap}{
-				Translated the whole website to Polish, Fixed a lot of minor bugs, created \tech{Artisan} scripts to migrate data from \tech{SQL} to \tech{Redis} and scripts to populate the database with dummy data for development purposes. OpenLitterMap is an open-source project developed with \tech{Laravel} and \tech{ReactNative}.
-				\vspace{0.2ex}
+				\vspace{-3.0mm}
+				\begin{itemize}
+  					\item Created Artisan scripts to migrate data from SQL to Redis
+  					\item Developed scripts to populate the database with dummy data for development purposes
+  					\item Fixed a lot of minor bugs
+  					\item Translated the whole website to Polish
+				\end{itemize}
 			}
 				\experience{05.2021}{08.2021}{Part-time Internship at Measuresoft (Software Engineer)}{http://measuresoft.com/}{Measuresoft}{
-				Created software installers with the use of \tech{WIX} that the end consumer can use to install Measuresoft's software, Implemented secure \tech{TLS} connection between client and the server for the existing software using \tech{OpenSSL} in \tech{C}. Done research on how a \tech{C shared library} can be executed through a web interface. Updated their projects to the newest version of Visual Studio after noticing that it wasn't possible to use newest version of \tech{openSSL} on them.
-				\vspace{0.2ex}
+				\vspace{-3.0mm}
+				\begin{itemize}
+  					\item Created software installers with the use of \tech{WIX} that the end consumer can use to install Measuresoft's software
+  					\item Implemented secure \tech{TLS} connection between client and the server for the existing software using \tech{OpenSSL} in \tech{C}
+  					\item Conducted research on how a \tech{C shared library} can be executed through a web interface
+  					\item Updated projects to the newest version of Visual Studio after noticing compatibility issues with the latest version of OpenSSL
+				\end{itemize}
 			}
-				\experience{08.2020}{10.2020}{GirlScript Gaming Booster Mentor}{}{}{
-				Mentoring people around the world to code 2 basic games in \tech{Java (processing)} and \tech{JavaScript}, the games that I thought my mentees were Flappy Bird \tech{processing} and Snake \tech{(JS)}.
-				\vspace{0.2ex}
-			}
+				%\experience{08.2020}{10.2020}{GirlScript Gaming Booster Mentor}{}{}{
+				%Mentoring people around the world to code 2 basic games in \tech{Java (processing)} and \tech{JavaScript}, the games that I thought my mentees were Flappy Bird \tech{processing} and Snake \tech{(JS)}.
+			%}
 		\end{tabularx}
 		\\ \\
 	\end{section}
@@ -155,10 +192,10 @@
 				Developed a security camera system using cheap electronic components such as ESP32CAM and PIR sensor to privately send notifications and recordings to Discord or Signal when motion is detected. The project is written in \tech{Python} and a modified version of ESP32CAM streaming web server to send out sockets to the Discord/Signal Bot when the PIR sensor detects motion, thus triggering the bot to send a private message of motion being detected and capturing 35 seconds of the cameras live feed and sending it. The bot contains three commands, \tech{!start, !stop,} and \tech{!last} to send the last 5 seconds captured.
 				\vspace{0.2ex}
 			}
-				\experience{01.2017}{}{Unix on ARM}{}{}{
-				Journey began with Raspberry Pi 3 used as a simple home theater that later led to hosting local servers and thinkering of what else can be achieved with it for home use. Currently use \tech{RPI3} as PiHole and \tech{RPi4} for local password manager hosting with daily backup \tech{CRON} jobs. When I learned Switch console has a capability of running Unix, I've took the console apart and began microsoldering weeks after only having it, it meant unlocking full potential of the device and allow for endless possibilities.
-				\vspace{0.2ex}
-			}
+			%	\experience{01.2017}{}{Unix on ARM}{}{}{
+			%	Journey began with Raspberry Pi 3 used as a simple home theater that later led to hosting local servers and thinkering of what else can be achieved with it for home use. Currently use \tech{RPI3} as PiHole and \tech{RPi4} for local password manager hosting with daily backup \tech{CRON} jobs. When I learned Switch console has a capability of running Unix, I've took the console apart and began microsoldering weeks after only having it, it meant unlocking full potential of the device and allow for endless possibilities.
+			%	\vspace{0.2ex}
+			%}
 			
 				\experience{06.2013}{}{ParkourLive (Minecraft)}{https://github.com/Xamyrz/Parkour}{Parkour}{
 				Project which began in 2013 under the name XamJump was a Minecraft server dedicated to parkour that gathering roughly 300 concurrent players at peak times, at the time I was maintaing the Unix side of the project. The plugin was maintained by two developers until the project was no longer profitable in early 2014. In 2022 project was revived under the name ParkourLive where my initial code contribution began by updating the legacy code and adding new features.
